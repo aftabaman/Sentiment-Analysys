@@ -150,7 +150,7 @@ def hello_world():
 
 
 
-@app.route('/analyze-text',methods=["GET","POST"])
+@app.route('/analyze-text',methods=["POST"])
 
 def analyze():
     if request.method=="POST":
