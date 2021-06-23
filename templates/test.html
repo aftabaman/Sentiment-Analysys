@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> analyze page</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<nav>
+				<ul>
+					<li><a href="#">home</a></li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">contact us </a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="row">
+			<div class="col">
+			<div class="card">
+				<h5> card1</h5>
+                <h2 style="color:red;"> the tweet is <span id="answer"></span></h2>
+
+			</div>
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="card">
+						<h5> card2</h5>
+						<canvas id="myChart1" width="400" height="500"></canvas>
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="card">
+						<h5> card3</h5>
+						<canvas id="myChart2" width="400" height="500"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script>
+    var details = JSON.parse('{{ details | tojson | safe}}');
+    document.getElementById('answer').innerHTML = details.result+" ";
+
+
+var ctx = document.getElementById('myChart1').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+        labels: details.labels,
+        datasets: [{
+            label: 'effective words',
+            data: details.data,
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+
+
+    }
+});
+
+var ctx = document.getElementById('myChart2').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: details.class_labels,
+        datasets: [{
+            label: 'Probability of each label',
+            data: details.proba,
+            backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+
+
+    }
+});
+
+
+
+
+</script>
+</html>
