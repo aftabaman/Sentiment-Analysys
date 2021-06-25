@@ -160,7 +160,7 @@ def about():
 
     return render_template("About.html")
 
-@app.route('/analyze-text',methods=["GET","POST"])
+@app.route('/analyze-text',methods=["POST"])
 
 def analyze():
     if request.method=="POST":
