@@ -2,36 +2,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+
 <title> analyze page</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style3.css')}}">
+     <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='StyleSheet1.css')}}">
+     <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='StyleSheet2.css')}}">
 <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
 
 </head>
 <body>
-	<div class="container">
-		<div class="navbar">
-			<nav>
-				<ul>
-					<li><a href="#">home</a></li>
-					<li><a href="#">about</a></li>
-					<li><a href="#">contact us </a></li>
-				</ul>
-			</nav>
-		</div>
+	<div class="container-analyze">
+		<header class="main-header">
+        <a href="/" class="brand-logo">
+            <img src="{{url_for('static',filename='images/logo.png')}}">
+            <div class="brand-logo-name">
+			Vaccine Stance Analysation
+			</div>
+            </a>
+            <nav class="main-nav">
+            <ul>
+            <li><a href="/details">Details</a></li>
+            <li><a href="/about">About Us</a></li>
+            </ul>
+            </nav>
+    </header>
 
 		<div class="row">
 			<div class="col">
 			<div class="card">
-				<h5> card1</h5>
-                <h2 style="color:red;"> the tweet is <span id="answer"></span></h2>
+				<h5> Predicted Sentiment</h5>
+                <h2 style="color:red; justify-content:center;"> the tweet is <span id="answer"></span></h2>
 
 			</div>
 			</div>
 			<div class="col">
 				<div class="row">
 					<div class="card">
-						<h5> card2</h5>
+						<h5 style="justify-content:center;"> Effective Words</h5>
 						<canvas id="myChart1" width="400" height="500"></canvas>
 
 
@@ -39,12 +52,44 @@
 				</div>
 				<div class="row">
 					<div class="card">
-						<h5> card3</h5>
+						<h5 style="justify-content:center;"> Probability of all Classes</h5>
 						<canvas id="myChart2" width="400" height="500"></canvas>
 					</div>
 				</div>
 			</div>
 		</div>
+
+<footer>
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Sentiment Prediction</a></li>
+                            <li><a href="#">Analytics</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Associated With: UEM,Kolkata</a></li>
+                            <li><a href="#">Tech Used: ML,Flask</a></li>
+                            <li><a href="#">Python,Html,CSS,Java Script</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Vaccine Stance Analysation © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</footer>
 	</div>
 
 </body>
@@ -124,4 +169,5 @@ var myChart = new Chart(ctx, {
 
 
 </script>
+
 </html>

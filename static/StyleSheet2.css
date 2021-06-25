@@ -1,0 +1,63 @@
+﻿.home-main-section,.details-main-section{
+	display:flex;
+	align-items:stretch;
+	justify-content:space-between;
+	flex-grow:1;
+	padding:10px 20px;
+	}
+
+.home-main-section .call-to-action{
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	margin:1rem;
+	align-self:center;
+	transition:2s;
+	margin-left:50px;
+	padding-left:50px;
+}
+
+
+.home-main-section .img-wrapper{
+	flex-grow:1;
+	flex-direction:column;
+	display:flex;
+	align-items:stretch;
+	justify-content:flex-end;
+	margin-right:50px;
+
+}
+
+.home-main-section .vaccine-image{
+	background-image: url("images/vaccine.png");
+	flex-grow:1;
+	margin-left:15rem;
+	max-height:40vh;
+	min-width:30vw;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:bottom right;
+
+}
+
+
+.details-main-section .description{
+margin:1rem;
+align-self:center;
+left:1vw;
+width:35vw;
+font-size:1.5em;
+background-color:white;
+transition:2s;
+}
+
+
+
+
+
+.circle-1 img{
+	position:absolute;
+
+	top:15vw;
+	right:15vw;
+}

@@ -31,7 +31,7 @@ import pickle
 
 
 app = Flask(__name__)
-
+#app = Flask(__name__, static_url_path='/static')
 
 model=pickle.load(open("assets/SVM_model.sav", 'rb'))
 
@@ -112,7 +112,7 @@ def predict(model,text):
     proba_temp = model.predict_proba([clean_text]).tolist()
 
     proba = proba_temp[0]
-
+    print(proba)
     result= result.tolist()
     dic={'class_labels':['AntiVaccine','Neutral','ProVaccine'],'result':result[0],'proba':proba,'data':[],'labels':[]}
 
@@ -124,7 +124,7 @@ def predict(model,text):
         if classes[i]==result[0]:
             data_pack = explained.as_list(label=i)
 
-
+    print(type(data_pack))
     label = []
     data = []
 
@@ -146,11 +146,21 @@ predict(model,"this vaccine is not good ,don't take it.")
 @app.route('/')
 def hello_world():
 
-    return render_template("index.html")
+    return render_template("Home.html")
 
 
+@app.route('/details')
+def details():
 
-@app.route('/analyze-text',methods=["POST"])
+    return render_template("Details.html")
+
+
+@app.route('/about')
+def about():
+
+    return render_template("About.html")
+
+@app.route('/analyze-text',methods=["GET","POST"])
 
 def analyze():
     if request.method=="POST":
@@ -163,4 +173,4 @@ def analyze():
 
     return render_template("index.html")
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

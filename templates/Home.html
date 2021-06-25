@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style3.css')}}">
+     <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='StyleSheet1.css')}}">
+     <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='StyleSheet2.css')}}">
+    
+    <title>VSA</title>
+</head>
+<body class="container full-height-grow">
+    <header class="main-header">
+        <a href="/" class="brand-logo">
+            <img src="{{url_for('static',filename='images/logo.png')}}">
+            <div class="brand-logo-name">
+			Vaccine Stance Analysation
+			</div>
+            </a>
+            <nav class="main-nav">
+            <ul>
+            <li><a href="/details">Details</a></li>
+            <li><a href="/about">About Us</a></li>
+            </ul>
+            </nav>
+    </header> 
+
+
+    <section class="home-main-section">
+    <div class="call-to-action">
+    <h1 class="title">Enter Tweet</h1>
+    <span class="subtitle">to check sentiment of tweet and receive analytics</span>
+    <div class="input-form">
+	<form action="/analyze-text" method="POST" enctype="">
+
+                <input type="text"  name ="text" id="text" placeholder="Enter the Tweet">
+				<div class="row">
+				<button type="submit" class="btn"> analyze </button>
+				</div>
+            </form>
+    </div>
+    </div>
+    <div class="img-wrapper">
+    <h1 class="text">Know what is the stance of the world on the COVID 19 vaccines by analysing your own tweet</h1>
+    <div class="vaccine-image"></div> 
+
+    </div>
+    
+   </section>
+    
+</body>
+<footer>
+<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Sentiment Prediction</a></li>
+                            <li><a href="#">Analytics</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Associated With: UEM,Kolkata</a></li>
+                            <li><a href="#">Tech Used: ML,Flask</a></li>
+                            <li><a href="#">Python,Html,CSS,Java Script</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Vaccine Stance Analysation © 2021</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</footer>
+</html>
