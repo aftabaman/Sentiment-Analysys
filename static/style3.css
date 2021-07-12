@@ -2,7 +2,7 @@
   padding:50px 20px;
   color:#f0f9ff;
   background-color:#282d32;
-  height:40%;
+  height:30%;
 }
 
 .footer-dark h3 {
@@ -83,7 +83,7 @@
 
 .footer-dark .copyright {
   text-align:center;
-  padding-top:24px;
+  padding-top:15px;
   opacity:0.3;
   font-size:13px;
   margin-bottom:0;
